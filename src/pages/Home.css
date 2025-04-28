@@ -1,0 +1,49 @@
+/* Home Page Global Styles */
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #83beac, #15a3a8); /* Light green to gray-green gradient */
+    font-family: 'Inter', sans-serif; /* Optional: make it more modern */
+  }
+    
+  .home-card {
+    background-color: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    margin: 5rem auto; /* Center with margin instead of flex */
+  }
+  
+  .home-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #2e7d32; /* Solid deep green */
+    margin-bottom: 1.5rem;
+  }
+  
+  .home-description {
+    font-size: 1.25rem;
+    color: #4a5568; /* Neutral dark gray */
+    margin-bottom: 2.5rem;
+  }
+  
+  .explore-button {
+    background: linear-gradient(to right, #4CAF50, #4B94FF);
+    color: #ffffff;
+    padding: 0.75rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    text-decoration: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .explore-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #43a047, #3b82f6); /* Slightly deeper hover */
+  }
+  

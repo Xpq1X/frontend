@@ -1,0 +1,55 @@
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 50px;
+    background: linear-gradient(to right, #e0f7e9, #d6e4db); /* Light greenish gradient */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px); /* Optional: add slight glassy effect */
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: linear-gradient(to right, #4CAF50, #4B94FF);
+    -webkit-background-clip: text; /* Webkit browsers */
+  background-clip: text; /* Standard for compatibility */
+    color: transparent;
+    cursor: pointer;
+    letter-spacing: 1px;
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    background: linear-gradient(to right, #4CAF50, #4B94FF);
+    color: white;
+  }
+  

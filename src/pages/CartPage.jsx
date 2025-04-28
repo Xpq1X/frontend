@@ -6,22 +6,22 @@ const CartPage = () => {
   const { cart, removeFromCart, adjustQuantity } = useCart();
 
   const handleRemoveFromCart = (id) => {
-    removeFromCart(id);
+    removeFromCart(id);  // This will trigger the cart update and localStorage sync
   };
 
   const handleAdjustQuantity = (id, quantity) => {
-    adjustQuantity(id, quantity);
+    adjustQuantity(id, quantity);  // Adjust quantity based on input change
   };
 
   const handleCheckout = () => {
-    // Proceed to checkout (could involve a backend call)
+    // Implement checkout functionality here (e.g., redirect to checkout page, or call backend)
     alert('Proceeding to checkout...');
   };
 
   useEffect(() => {
-    // Optionally, you can still use localStorage to sync with the CartContext state.
+    // Sync cart with localStorage whenever the cart changes
     localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);  // Sync cart state with localStorage whenever it changes
+  }, [cart]);  // This will automatically sync the cart state
 
   return (
     <div>
