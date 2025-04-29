@@ -1,0 +1,122 @@
+.cart-page-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    height: 100vh; /* Make sure it reaches the full height */
+    box-sizing: border-box;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cart-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: calc(100vh - 180px); /* Adjust height for proper scrolling */
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: 100px; /* Ensure consistent height */
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.cart-item h2 {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+}
+
+.cart-item p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.remove-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;  /* Adjusted padding for proper size */
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 40px;
+    font-size: 14px; /* Adjusted font size for consistency */
+    transition: background-color 0.3s;
+    min-width: 90px; /* Ensure the button is wide enough */
+    text-align: center;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+.cart-summary {
+    margin-top: 30px;
+    text-align: center;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    position: fixed;  /* Fix the summary to the bottom */
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cart-summary h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.checkout-info {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  /* Limit width for button */
+    margin: 0 auto; /* Center align the button */
+    display: block; /* Block-level button */
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.continue-shopping {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.continue-shopping:hover {
+    text-decoration: underline;
+}

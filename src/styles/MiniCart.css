@@ -1,0 +1,117 @@
+.mini-cart-container {
+    position: fixed;  /* Fixed position for the cart button */
+    top: 130px;
+    right: 250px;
+    z-index: 1000;
+  }
+  
+  .cart-toggle-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cart-toggle-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .mini-cart-dropdown {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .mini-cart-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mini-cart-dropdown li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Makes the remove button position absolute within this container */
+  }
+  
+  .remove-item-btn {
+    background: transparent;
+    border: 1px solid red;
+    color: red;
+    font-size: 14px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute; /* Positioned inside the cart-item container */
+    left: 260px; /* Keeps it at the right edge of the container */
+  }
+  
+  .remove-item-btn:hover {
+    background-color: red;
+    color: white;
+  }
+  
+  
+  .mini-cart-dropdown p {
+    margin-top: 10px;
+  }
+  
+  .checkout-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .clear-cart-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .clear-cart-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .checkout-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #218838;
+  }
+  
