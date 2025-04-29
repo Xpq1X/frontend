@@ -29,6 +29,22 @@
     display: flex;
     align-items: center;
   }
+  .nav-button {
+    background: none;
+    border: none;
+    color: #333333;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background: linear-gradient(to right, #4CAF50, #4B94FF);
+    color: white;
+  }
   
   .nav-links {
     display: flex;

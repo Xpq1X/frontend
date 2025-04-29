@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { CartProvider } from './context/CartContext'; // Import CartProvider
+import Header from './components/Header.jsx';  // Correct the extension to .jsx
 
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
@@ -9,7 +10,6 @@ import CartPage from './pages/CartPage';
 import ContactPage from './pages/ContactPage';
 import FAQPage from './pages/FAQPage';
 import AdminDashboard from './pages/AdminDashboard';
-import Header from './components/Header';
 import AddProductPage from './pages/AddProductPage'; // Import the page
 
 
