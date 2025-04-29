@@ -1,4 +1,4 @@
-/* import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios'; // Axios for API calls
 import { Link } from 'react-router-dom';
 
@@ -49,9 +49,9 @@ const ProductsPage = () => {
 };
 
 export default ProductsPage;
-*/
+
 /* ProductsPage.jsx (working desktop version) */
-import React, { useEffect, useState } from 'react';
+/* import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { mockProducts } from '../mockProducts';
@@ -106,3 +106,4 @@ const ProductsPage = () => {
 };
 
 export default ProductsPage;
+*/

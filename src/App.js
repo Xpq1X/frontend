@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { CartProvider } from './context/CartContext'; // Import CartProvider
-import Header from './components/Header.jsx';  // Correct the extension to .jsx
+
+import Header from './components/Header.jsx';
+import MiniCart from './components/MiniCart';
 
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
@@ -10,29 +11,33 @@ import CartPage from './pages/CartPage';
 import ContactPage from './pages/ContactPage';
 import FAQPage from './pages/FAQPage';
 import AdminDashboard from './pages/AdminDashboard';
-import AddProductPage from './pages/AddProductPage'; // Import the page
-import MiniCart from './components/MiniCart';
+import AddProductPage from './pages/AddProductPage';
+
+import { CartProvider } from './context/CartContext'; // Optional: remove if unused
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
-    <CartProvider> {/* Wrap the entire app with CartProvider */}
-      <Router>
-        <Header /> {/* Place Header inside Router */}
-        <MiniCart /> {/* MiniCart should be placed in the header, likely as a cart summary or toggle */}
-        <main>
-          <Routes>
-            <Route path="/admin/add-product" element={<AddProductPage />} />
-            <Route path="/" element={<HomePage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/products/:id" element={<ProductDetailPage />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/faq" element={<FAQPage />} />
-            <Route path="/admin" element={<AdminDashboard />} />
-          </Routes>
-        </main>
-      </Router>
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <Router>
+          <Header />
+          <MiniCart />
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/products/:id" element={<ProductDetailPage />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/faq" element={<FAQPage />} />
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/admin/add-product" element={<AddProductPage />} />
+            </Routes>
+          </main>
+        </Router>
+      </CartProvider>
+    </AuthProvider>
   );
 }
 

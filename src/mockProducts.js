@@ -1,5 +1,5 @@
 // src/mockProducts.js
-export const mockProducts = [
+/* export const mockProducts = [
     {
       id: 1,
       name: 'Cyber Shirt',
@@ -22,4 +22,4 @@ export const mockProducts = [
       image: 'https://via.placeholder.com/300x200?text=Necklace'
     }
   ];
-  
+  */
