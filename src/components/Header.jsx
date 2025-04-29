@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'; // Assume you have auth context
-import './Header.css';
+import '../styles/Header.css'; // Make sure your Header.css is correct
+
 
 const Header = () => {
   const { currentUser, logout } = useAuth(); // Assume you have currentUser info

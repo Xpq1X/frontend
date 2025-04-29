@@ -1,57 +1,67 @@
 import React, { useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
+import '../styles/CartPage.css';
 
 const CartPage = () => {
-  const { cart, removeFromCart, adjustQuantity } = useCart();
+  const { cart, removeOneFromCart } = useCart();
 
   const handleRemoveFromCart = (id) => {
-    removeFromCart(id);  // This will trigger the cart update and localStorage sync
-  };
-
-  const handleAdjustQuantity = (id, quantity) => {
-    adjustQuantity(id, quantity);  // Adjust quantity based on input change
+    removeOneFromCart(id);
   };
 
   const handleCheckout = () => {
-    // Implement checkout functionality here (e.g., redirect to checkout page, or call backend)
     alert('Proceeding to checkout...');
   };
 
   useEffect(() => {
-    // Sync cart with localStorage whenever the cart changes
     localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);  // This will automatically sync the cart state
+  }, [cart]);
+
+  const formatCurrency = (amount) =>
+    `$${(Math.round(amount * 100) / 100).toFixed(2)}`;
+
+  const calculateTotal = () =>
+    cart.reduce((total, item) => total + item.price * item.quantity, 0);
+
+  const calculateTotalQuantity = () =>
+    cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <div>
+    <div className="cart-page-container">
       <h1>Your Cart</h1>
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <div>
-          {cart.map(item => (
-            <div key={item.id}>
-              <h2>{item.name}</h2>
-              <p>Price: ${item.price}</p>
-              <p>Quantity: 
-                <input 
-                  type="number" 
-                  value={item.quantity} 
-                  min="1" 
-                  onChange={(e) => handleAdjustQuantity(item.id, parseInt(e.target.value))}
-                />
-              </p>
-              <button onClick={() => handleRemoveFromCart(item.id)}>Remove</button>
-            </div>
-          ))}
-          <div>
-            <h3>Total: ${cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}</h3>
+        <div className="cart-items-container">
+          {cart.map((item) => {
+            const itemTotal = item.price * item.quantity;
+            return (
+              <div key={item.id} className="cart-item">
+                <div className="cart-item-info">
+                  <h2>{item.name}</h2>
+                  <p>Price: {formatCurrency(item.price)}</p>
+                  <p>Quantity: {item.quantity}</p>
+                  <p>Item Total: {formatCurrency(itemTotal)}</p>
+                </div>
+                <button className="remove-btn small-btn" onClick={() => handleRemoveFromCart(item.id)}>
+  Remove
+</button>
+
+              </div>
+            );
+          })}
+          <div className="cart-summary">
+            <h3>Total Quantity: {calculateTotalQuantity()}</h3>
+            <h3>Total: {formatCurrency(calculateTotal())}</h3>
+            <p className="checkout-info">
+              After clicking "Proceed to Checkout," you will be redirected to a page where you can enter your address and payment details.
+            </p>
             <button onClick={handleCheckout}>Proceed to Checkout</button>
           </div>
         </div>
       )}
-      <Link to="/products">Continue Shopping</Link>
+      <Link to="/products" className="continue-shopping">Continue Shopping</Link>
     </div>
   );
 };
