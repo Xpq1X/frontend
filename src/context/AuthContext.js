@@ -1,4 +1,3 @@
-// AuthContext.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
@@ -9,8 +8,13 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('currentUser'));
-    if (user) setCurrentUser(user);
+    try {
+      const user = JSON.parse(localStorage.getItem('currentUser'));
+      if (user) setCurrentUser(user);
+    } catch (e) {
+      console.error('Failed to parse user from localStorage:', e);
+      localStorage.removeItem('currentUser');
+    }
   }, []);
 
   const login = (user) => {
@@ -23,8 +27,10 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('currentUser');
   };
 
+  const isAuthenticated = !!currentUser;
+
   return (
-    <AuthContext.Provider value={{ currentUser, login, logout }}>
+    <AuthContext.Provider value={{ currentUser, isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

@@ -1,12 +1,11 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext'; // Assume you have auth context
-import '../styles/Header.css'; // Make sure your Header.css is correct
-
+import { useAuth } from '../context/AuthContext'; // Assuming you have auth context
+import '../styles/Header.css'; // Updated styles for a sleeker design
 
 const Header = () => {
-  const { currentUser, logout } = useAuth(); // Assume you have currentUser info
+  const { currentUser, logout } = useAuth(); // Get current user from context
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -17,6 +16,8 @@ const Header = () => {
       console.error("Failed to logout:", error);
     }
   };
+
+  const toggleDropdown = () => setDropdownOpen(prev => !prev);
 
   return (
     <header className="header">
@@ -32,13 +33,21 @@ const Header = () => {
 
           {currentUser ? (
             <>
-              <li><button onClick={handleLogout} className="nav-button">Logout</button></li>
-              <li><a href="/admin">Admin Panel</a></li>  {/* Admin panel link */}
+              <li className="user-profile">
+                <button onClick={toggleDropdown} className="nav-button">{currentUser.username}</button>
+                {dropdownOpen && (
+                  <div className="dropdown-menu">
+                    <a href="/profile">Profile</a>
+                    <a href="/settings">Settings</a>
+                    <button onClick={handleLogout}>Logout</button>
+                  </div>
+                )}
+              </li>
             </>
           ) : (
             <>
-              <li><a href="/login">Login</a></li> {/* Login link */}
-              <li><a href="/register">Register</a></li> {/* Register link */}
+              <li><a href="/login">Login</a></li>
+
             </>
           )}
         </ul>
