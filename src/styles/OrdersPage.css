@@ -1,0 +1,47 @@
+.orders-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #fffdf8;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+  
+  .orders-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .order-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    background-color: #fafafa;
+    transition: 0.3s;
+  }
+  
+  .order-card:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .order-card p {
+    margin: 0.4rem 0;
+    color: #444;
+  }
+  
+  .pay-button {
+    padding: 0.5rem 1rem;
+    background-color: #008c4a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .pay-button:hover {
+    background-color: #006d3a;
+  }
+  

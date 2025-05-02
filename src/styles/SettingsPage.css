@@ -1,0 +1,32 @@
+.settings-container {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 300px;
+    padding: 2rem;
+    background: #f7f7f7;
+    border-radius: 10px;
+  }
+  
+  .settings-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .settings-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .settings-form button {
+    background: #0077ff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

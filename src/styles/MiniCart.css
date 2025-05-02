@@ -1,7 +1,7 @@
 .mini-cart-container {
     position: fixed;  /* Fixed position for the cart button */
     top: 130px;
-    right: 250px;
+    right: 280px;
     z-index: 1000;
   }
   

@@ -37,7 +37,7 @@ const MiniCart = () => {
               <p><strong>Total:</strong> {formatCurrency(total)}</p>
               <div className="checkout-section">
                 <Link to="/cart">
-                  <button className="checkout-btn">Go to Checkout</button>
+                  <button className="checkout-btn">View Cart</button>
                 </Link>
                 <button className="clear-cart-btn" onClick={clearCart}>Clear Cart</button>
               </div>
@@ -50,4 +50,3 @@ const MiniCart = () => {
 };
 
 export default MiniCart;
-  
